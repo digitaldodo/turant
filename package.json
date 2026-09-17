@@ -1,0 +1,26 @@
+{
+  "name": "turant",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Turant hyperlocal ordering and delivery platform monorepo",
+  "workspaces": [
+    "apps/student-web",
+    "apps/rider-web",
+    "apps/admin-web",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:student": "npm run dev --workspace=@turant/student-web",
+    "dev:rider": "npm run dev --workspace=@turant/rider-web",
+    "dev:admin": "npm run dev --workspace=@turant/admin-web",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "format": "npm run format --workspaces --if-present",
+    "format:check": "npm run format:check --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  }
+}

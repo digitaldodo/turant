@@ -1,0 +1,16 @@
+# Activate with SPRING_PROFILES_ACTIVE=local after setting DATABASE_* variables.
+spring:
+  autoconfigure:
+    exclude: []
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/turant}
+    username: ${DATABASE_USERNAME:turant}
+    password: ${DATABASE_PASSWORD:change-me}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
